@@ -1,0 +1,17 @@
+spring:
+  config:
+    import:
+      optional:secrets.yaml
+
+#spring:
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+#      settings.trace: false
+#  datasource:
+#    url: jdbc:h2:file:/home/pawel/Project/databases/playground
+#    driverClassName: org.h2.Driver
+#  jpa:
+#    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+#    show-sql: true
