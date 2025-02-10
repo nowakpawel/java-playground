@@ -44,6 +44,52 @@ public class Algorithms {
             return newArray;
     }
 
+    public List<Integer> quickSort(List<Integer> unsortedList) {
+        int size = unsortedList.size();
+        List<Integer> less;
+        List<Integer> greater;
+
+        List<Integer> sorted = new ArrayList<>();
+
+        if (size < 2) {
+            return unsortedList;
+        } else {
+            Integer pivot = unsortedList.get(0);
+            less = findAllSmallest(pivot, unsortedList);
+            greater = findAllGreater(pivot, unsortedList);
+
+            sorted.addAll(quickSort(less));
+            sorted.addAll(List.of(pivot));
+            sorted.addAll(quickSort(greater));
+        }
+
+        return sorted;
+    }
+
+    private List<Integer> findAllSmallest(Integer pivot, List<Integer> list) {
+        List<Integer> less = new ArrayList<>();
+
+        for (Integer integer: list) {
+            if (integer < pivot) {
+                less.add(integer);
+            }
+        }
+
+        return less;
+    }
+
+    private List<Integer> findAllGreater(Integer pivot, List<Integer> list) {
+        List<Integer> greater = new ArrayList<>();
+
+        for (Integer integer: list) {
+            if (integer > pivot) {
+                greater.add(integer);
+            }
+        }
+
+        return greater;
+    }
+
     private int findSmallestElement(List<Integer> arr) {
         int smallest = arr.get(0);
         int smallestIndex = 0;

@@ -18,6 +18,10 @@ public class Main {
         System.out.println("Unsorted array:\t" + unsorted);
         System.out.println("SortedList:\t" + algorithms.selectionSort(unsorted));
 
+        printDelimiter("Quick Sort");
+        ArrayList<Integer> otherUnsorted = new ArrayList<>(Arrays.asList(1, -2, 5, 7, 16, -4, 0, 19, 9, 10, 21));
+        System.out.println(algorithms.quickSort(otherUnsorted));
+
 
     }
 
